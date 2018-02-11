@@ -26,3 +26,11 @@ Untracked files:
         task1/
 
 nothing added to commit but untracked files present (use "git add" to track)
+
+
+INNA_K@PC104 MINGW32 /d/cllrvn/folder2/work (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
