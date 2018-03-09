@@ -1,0 +1,80 @@
+body, html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+    background-color: #ffffff;
+    color: darkgrey;
+}
+.wrapper{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+.header{
+    width: 100%;
+    background-image: url("header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 4vw;
+    line-height: 4.8vh;
+    color: darkgrey;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12vh 0;
+}
+
+.top-panel{
+    width: 100%;
+    background-color: sandybrown;
+    line-height: 2.4vw;
+    text-align: right;
+}
+
+button{
+    border-color: cornflowerblue;
+    color: ghostwhite;
+    background-color: cornflowerblue;
+}
+
+.right-sidebar{
+    width: 15%;
+    margin: 0;
+    padding: 0;
+    background-color: #d2edfa;
+    line-height: 2.4vw;
+    text-align: left;
+    text-transform: uppercase;
+    float: right;
+}
+
+.content{
+    background-color: #d2edfa;
+    float: left;
+    width: 85%;
+    line-height: 2.4vw;
+    text-align: center;
+    overflow: scroll;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.clear {
+    clear: both;
+}
+.footer{
+    width: 100%;
+    background-color: darkgrey;
+    padding: 3.6vh 0;
+    color: sandybrown;
+    font-size: 1.2vw;
+    line-height: 1.2vw;
+    text-align: left;
+}
+
+button{
+    color: ghostwhite;
+    background-color: cornflowerblue;
+}
