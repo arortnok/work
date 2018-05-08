@@ -139,7 +139,6 @@ var editPhotoPost = function(id, photoPost){
             if(photoPost.hashTags != null){
                 newPhotoPost.hashTags = photoPost.hashTags;
             }
-            //console.log(newPhotoPost.descriprion);
             return newPhotoPost;
         }
     return null;
@@ -153,7 +152,35 @@ var removePhotoPost = function(id){
     return true;
 };
 
-photoPosts.forEach(function(item, i, photoPosts){
-    console.log(item.descriprion);
-});
+var getPhotoPosts = function(skip, top, filterConfig){
+    var res = [];
+    if(filterConfig === null){
+        for (var i = skip; i < top; i++){
+            res.push(photoPosts[i]);
+        }
+        return res;
+    }
+    else {
+        var k = 0;
+        while (k !== top) {
+            for (var j = skip; j < photoPosts.length; j++) {
+                if((filterConfig.author === null || photoPosts[j].author === filterConfig[j].author) &&
+                    (filterConfig.createdAt === null || photoPosts[j].createdAt === filterConfig[j].createdAt) &&
+                    (filterConfig.hashTags === null || photoPosts[j].hashTags === filterConfig[j].hashTags)){
+                    res.push(photoPosts[j]);
+                    k++;
+                }
+            }
+
+        }
+        return res;
+    }
+}
+
+/*photoPosts.forEach(function(item, i, photoPosts){
+    console.log(item.author);
+});*/
+
+var r = getPhotoPosts(9, 10, null);
+console.log(r);
 

@@ -1,10 +1,9 @@
 body, html {
-    width: 100vw;
+    width: 1000px;
     height: 100vh;
     margin: 0;
     padding: 0;
     font-family: Georgia;
-    background-color: #ffffff;
     color: darkgrey;
 }
 .wrapper{
@@ -15,7 +14,7 @@ body, html {
 }
 .header{
     width: 100%;
-    background-image: url("header.jpg");
+    background-image: url(".UI/header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 4vw;
@@ -49,18 +48,22 @@ button{
     text-transform: uppercase;
     float: right;
 }
-
+.right-sidebar input {
+    text-transform: lowercase;
+    width: 50%;
+}
 .content{
     background-color: #d2edfa;
     float: left;
     width: 85%;
     line-height: 2.4vw;
-    text-align: center;
+    text-align: left;
     overflow: scroll;
-    text-transform: uppercase;
     color: gray;
 }
-
+.content image{
+    width: 50%;
+}
 .clear {
     clear: both;
 }
