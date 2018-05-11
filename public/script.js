@@ -90,97 +90,94 @@ var photoPosts = [
         hashTags: ['wow']
     }
 ];
+window.func = (function() {
+        return {
+            sortByDate: function (photoPosts) {
+                photoPosts.sort(function (a, b) {
+                    return b.createdAt - a.createdAt;
+                });
+            },
 
-var sortByDate = function(photoPosts){
-    photoPosts.sort(function(a, b){
-        return  b.createdAt - a.createdAt;
-    });
-};
+            getPhotoPost: function (id) {
+                /*photoPosts.forEach(function (item, i, photoPosts){
+                    if(validatePhotoPost(item) && item.id == id){
+                        //console.log(item.id + '   ' + item.author);
+                        return photoPosts[i];
+                    }
+                    return null;
+                });*/
+                for (var i = 0; i < photoPosts.length; i++) {
+                    if (photoPosts[i].id == id) {
+                        return photoPosts[i];
+                    }
+                }
+                return false;
+            },
 
-var getPhotoPost = function(id){
-    /*photoPosts.forEach(function (item, i, photoPosts){
-        if(validatePhotoPost(item) && item.id == id){
-            //console.log(item.id + '   ' + item.author);
-            return photoPosts[i];
-        }
-        return null;
-    });*/
-    for(var i = 0; i < photoPosts.length; i++){
-        if(photoPosts[i].id == id){
-            return photoPosts[i];
-        }
-    }
-    return false;
-};
+            validatePhotoPost: function (photoPost) {
+                if (
+                    photoPost.id != null &&
+                    photoPost.descriprion != null &&
+                    photoPost.createdAt != null &&
+                    photoPost.author != null &&
+                    photoPost.photoLink != null)
+                    return true;
+                return false;
+            },
 
-var validatePhotoPost = function (photoPost) {
-   if(
-            photoPost.id != null &&
-            photoPost.descriprion != null &&
-            photoPost.createdAt != null &&
-            photoPost.author != null &&
-            photoPost.photoLink != null)
-       return true;
-   return false;
-};
+            addPhotoPost: function (photoPost) {
+                return (validatePhotoPost(photoPost)) &&
+                    photoPosts.push(photoPost);
+            },
+            editPhotoPost: function (id, photoPost) {
+                var newPhotoPost = getPhotoPost(id);
+                if (validatePhotoPost(photoPost)) {
+                    newPhotoPost.descriprion = photoPost.descriprion;
+                    newPhotoPost.photoLink = photoPost.photoLink;
+                    if (photoPost.likes != null) {
+                        newPhotoPost.likes = photoPost.likes;
+                    }
+                    if (photoPost.hashTags != null) {
+                        newPhotoPost.hashTags = photoPost.hashTags;
+                    }
+                    return newPhotoPost;
+                }
+                return null;
+            },
 
-var addPhotoPost = function (photoPost) {
-    return (validatePhotoPost(photoPost)) &&
-        photoPosts.push(photoPost);
-};
-var editPhotoPost = function(id, photoPost){
-    var newPhotoPost = getPhotoPost(id);
-        if(validatePhotoPost(photoPost)){
-            newPhotoPost.descriprion = photoPost.descriprion;
-            newPhotoPost.photoLink = photoPost.photoLink;
-            if(photoPost.likes != null){
-                newPhotoPost.likes = photoPost.likes;
-            }
-            if(photoPost.hashTags != null){
-                newPhotoPost.hashTags = photoPost.hashTags;
-            }
-            return newPhotoPost;
-        }
-    return null;
-};
+            removePhotoPost: function (id) {
+                var photoPost = getPhotoPost(id);
+                if (photoPost == null)
+                    return false;
+                photoPosts.splice(photoPosts.indexOf(photoPost), 1);
+                return true;
+            },
 
-var removePhotoPost = function(id){
-    var photoPost = getPhotoPost(id);
-    if(photoPost == null)
-        return false;
-    photoPosts.splice(photoPosts.indexOf(photoPost), 1);
-    return true;
-};
+            getPhotoPosts: function (skip, top, filterConfig) {
+                var res = [];
+                if (filterConfig === null) {
+                    for (var i = skip; i < top; i++) {
+                        res.push(photoPosts[i]);
+                    }
+                    return res;
+                }
+                else {
+                    var k = 0;
+                    while (k !== top) {
+                        for (var j = skip; j < photoPosts.length; j++) {
+                            if ((filterConfig.author === null || photoPosts[j].author === filterConfig[j].author) &&
+                                (filterConfig.createdAt === null || photoPosts[j].createdAt === filterConfig[j].createdAt) &&
+                                (filterConfig.hashTags === null || photoPosts[j].hashTags === filterConfig[j].hashTags)) {
+                                res.push(photoPosts[j]);
+                                k++;
+                            }
+                        }
 
-var getPhotoPosts = function(skip, top, filterConfig){
-    var res = [];
-    if(filterConfig === null){
-        for (var i = skip; i < top; i++){
-            res.push(photoPosts[i]);
-        }
-        return res;
-    }
-    else {
-        var k = 0;
-        while (k !== top) {
-            for (var j = skip; j < photoPosts.length; j++) {
-                if((filterConfig.author === null || photoPosts[j].author === filterConfig[j].author) &&
-                    (filterConfig.createdAt === null || photoPosts[j].createdAt === filterConfig[j].createdAt) &&
-                    (filterConfig.hashTags === null || photoPosts[j].hashTags === filterConfig[j].hashTags)){
-                    res.push(photoPosts[j]);
-                    k++;
+                    }
+                    return res;
                 }
             }
-
         }
-        return res;
     }
-}
-
-/*photoPosts.forEach(function(item, i, photoPosts){
-    console.log(item.author);
-});*/
-
-var r = getPhotoPosts(9, 10, null);
-console.log(r);
+)();
 
