@@ -1,4 +1,4 @@
-var photoPosts = [
+const photoPosts = [
     {
         id: '1',
         descriprion: 'Under the same sky',
@@ -90,7 +90,8 @@ var photoPosts = [
         hashTags: ['wow']
     }
 ];
-window.func = (function() {
+
+var func = (function() {
         return {
             sortByDate: function (photoPosts) {
                 photoPosts.sort(function (a, b) {
@@ -153,31 +154,39 @@ window.func = (function() {
                 return true;
             },
 
-            getPhotoPosts: function (skip, top, filterConfig) {
-                var res = [];
-                if (filterConfig === null) {
-                    for (var i = skip; i < top; i++) {
-                        res.push(photoPosts[i]);
-                    }
-                    return res;
+            getPhotoPosts: function (skip = 0, top = 10, filterConfig) {
+                if (filterConfig === undefined || arguments.length < 3 || filterConfig === {}) {
+                    return photoPosts.slice(skip, skip + top);
                 }
                 else {
-                    var k = 0;
-                    while (k !== top) {
-                        for (var j = skip; j < photoPosts.length; j++) {
-                            if ((filterConfig.author === null || photoPosts[j].author === filterConfig[j].author) &&
-                                (filterConfig.createdAt === null || photoPosts[j].createdAt === filterConfig[j].createdAt) &&
-                                (filterConfig.hashTags === null || photoPosts[j].hashTags === filterConfig[j].hashTags)) {
-                                res.push(photoPosts[j]);
-                                k++;
-                            }
-                        }
-
+                    if (typeof filterConfig !== 'object') {
+                        console.log('Error in getPhotoPosts');
+                        return;
                     }
-                    return res;
+                    var res = photoPosts;
+                    if (filterConfig.author) {
+                        res = res.filter(post => post.author === filterConfig.author);
+                    }
+                    if (filterConfig.createdAt) {
+                        res = res.filter(elem =>
+                            post.createdAt.getFullYear() === filterConfig.createdAt.getFullYear() &&
+                            post.createdAt.getMonth() === filterConfig.createdAt.getMonth() &&
+                            post.createdAt.getDate() === filterConfig.createdAt.getDate()
+                    );
+                    }
+                    if (filterConfig.hashtags) {
+                        res = res.filter(post => {
+                            return filterConfig.hashtags.every((tag) => {
+                                return post.hashtags.includes(tag);
+                    }) ;
+                    });
+                    }
+                    return res.slice(skip, skip + top);
                 }
+                return sortByDate(photoPosts);
             }
         }
     }
 )();
+
 
