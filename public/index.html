@@ -5,137 +5,144 @@
     <title>PhotoPortal</title>
     <link rel="stylesheet" type="text/css" href="styles.css"></head>
 <body>
-    <div class="wrapper">
+
     <div class="header">imprint it</div>
     <div class="top-panel">
-            <p>username</p>
-            <button>log out</button>
+        <div class = "user">
+            <div class = "username">You logged as Castanea Creanata</div>
+            <button class = "logout">Log out</button></button>
+        </div>
+        <button class = "add">Add photo</button>
+        <div class="searchPanel">
+            <input type="search" class="searchBy" placeholder="Author">
+            <input type="date" class="searchBy" placeholder="DD/MM/YY">
+            <input type="search" class="searchBy" placeholder="#">
+        </div>
     </div>
-    <div class="right-sidebar">
-        <br>
-            <button>add post</button></br>
-        <br><output>sort posts by</output></br>
-            <input type="checkbox" name="sort by" value="ch1"> author<br>
-            <input type="checkbox" name="sort by" value="ch2"> date<br>
 
-            <input type="search" value="#search..." >
-        </pre>
-    </div>
     <div class="content">
         <div class="photopost">
-            <pre>
-                <button></button> <button></button>
-                <output name="info">Katarina Ventrella at 2018-01-01T20:00:00</output>
-                <img src=".UI/pic1.jpg" style="width: 50vw">
-                <output name="description">Under the same sky</output>
-                <output name="hashTags">#sky #happy</output>
-                <output name="likes">Nomer Odin, Castanea Crenata, Erein Pak like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Katarina Ventrella at 2018-01-01T20:00:00</output>
+                <img class="photo" src = ".UI/pic1.jpg">
+                <output class="description">Under the same sky</output>
+                <output class="hashTags">#sky #happy</output>
+                <output class="likes">Nomer Odin, Castanea Crenata, Erein Pak like this</output>
+                <output class = "buttons">
+                    <button class ="like"></button>
+                    <button class ="edit"></button>
+                    <button class ="delete"></button>
+                </output>
         </div>
         <div class="photopost">
-            <pre>
-                <button></button> <button></button>
-                <output name="info">Dmitry Popugaev at 2018-01-02T20:00:00</output>
-                <img src=".UI/pic2.jpg" style="width: 50vw">
-                <output name="description">Hello</output>
-                <output name="hashTags">#darkness</output>
-                <output name="likes">Jack Oblivian, Nomer Odin, Erein Pak like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Dmitry Popugaev at 2018-01-02T20:00:00</output>
+                <img class="photo" src =".UI/pic2.jpg">
+                <output class="description">Hello</output>
+                <output class="hashTags">#darkness</output>
+                <output class="likes">Jack Oblivian, Nomer Odin, Erein Pak like this</output>
+                <output class = "buttons">
+                    <button class ="like"></button>
+                    <button class ="edit"></button>
+                    <button class ="delete"></button>
+                </output>
         </div>
         <div class="photopost">
-            <pre>
-                <button></button> <button></button>
-                <output name="info">Erein Pak at 2018-01-03T20:00:00</output>
-                <img src=".UI/pic3.jpg" style="width: 50vw">
-                <output name="description">Such a great cosplay!</output>
-                <output name="hashTags">#cosplay #miyazaki</output>
-                <output name="likes">Katarina Ventrella, Michiro Endo, Castanea Crenata like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Erein Pak at 2018-01-03T20:00:00</output>
+                <img class="photo" src =".UI/pic3.jpg">
+                <output class="description">Such a great cosplay!</output>
+                <output class="hashTags">#cosplay #miyazaki</output>
+                <output class="likes">Katarina Ventrella, Michiro Endo, Castanea Crenata like this</output>
+            <output class = "buttons">
+                <button class ="like"></button>
+                <button class ="edit"></button>
+                <button class ="delete"></button>
+            </output>
         </div>
         <div class="photopost">
-            <pre>
-                <button></button> <button></button>
-                <output name="info">Nomer Odin at 2018-01-04T20:00:00</output>
-                <img src=".UI/pic4.jpg" style="width: 50vw">
-                <output name="description">I wish I was there...</output>
-                <output name="hashTags">#dream</output>
-                <output name="likes">Dmitry Popugaev, Erein Pak like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Nomer Odin at 2018-01-04T20:00:00</output>
+                <img class="photo" src =".UI/pic4.jpg">
+                <output class="description">I wish I was there...</output>
+                <output class="hashTags">#dream</output>
+                <output class="likes">Dmitry Popugaev, Erein Pak like this</output>
+                <output class = "buttons">
+                <button class ="like"></button>
+                <button class ="edit"></button>
+                <button class ="delete"></button>
+            </output>
         </div>
         <div class="photopost">
-            <pre>
-                <button></button> <button></button>
-                <output name="info">Castanea Crenata at 2018-01-05T20:00:00</output>
-                <img src=".UI/pic5.jpg" style="width: 50vw">
-                <output name="description">home is best</output>
-                <output name="hashTags">#nature #home</output>
-                <output name="likes">Katarina Ventrella, Dmitry Popugaev, Erein Pak like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Castanea Crenata at 2018-01-05T20:00:00</output>
+                <img class="photo" src =".UI/pic5.jpg">
+                <output class="description">home is best</output>
+                <output class="hashTags">#nature #home</output>
+                <output class="likes">Katarina Ventrella, Dmitry Popugaev, Erein Pak like this</output>
+                <output class = "buttons">
+                    <button class ="like"></button>
+                    <button class ="edit"></button>
+                    <button class ="delete"></button>
+                </output>
         </div>
         <div class="photopost">
-               <pre>
-                <button></button> <button></button>
-                <output name="info">Katarina Ventrella at 2018-01-06T20:00:00</output>
-                <img src=".UI/pic6.jpg" style="width: 50vw">
-                <output name="description">nowplaying David Bowie - Starman</output>
-                <output name="hashTags">#np</output>
-                <output name="likes">Dmitry Popugaev, Castanea Crenata, Michiro Endo, Nomer Odin like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Katarina Ventrella at 2018-01-06T20:00:00</output>
+                <img class="photo" src =".UI/pic6.jpg">
+                <output class="description">nowplaying David Bowie - Starman</output>
+                <output class="hashTags">#np</output>
+                <output class="likes">Dmitry Popugaev, Castanea Crenata, Michiro Endo, Nomer Odin like this</output>
+                    <output class = "buttons">
+                    <button class ="like"></button>
+                    <button class ="edit"></button>
+                    <button class ="delete"></button>
+                </output>
         </div>
         <div class="photopost">
-             <pre>
-                <button></button> <button></button>
-                <output name="info">Nomer Odin at 2018-01-07T20:00:00</output>
-                <img src=".UI/pic7.jpg" style="width: 50vw">
-                <output name="description">Field recordings are the best</output>
-                <output name="hashTags">#fr #music</output>
-                <output name="likes">Dmitry Popugaev like this</output>
-                <button></button>
-             </pre>
+                <output class="info">Nomer Odin at 2018-01-07T20:00:00</output>
+                <img class="photo" src =".UI/pic7.jpg">
+                <output class="description">Field recordings are the best</output>
+                <output class="hashTags">#fr #music</output>
+                <output class="likes">Dmitry Popugaev like this</output>
+                    <output class = "buttons">
+                    <button class ="like"></button>
+                    <button class ="edit"></button>
+                    <button class ="delete"></button>
+                </output>
         </div>
         <div class="photopost">
-             <pre>
-                <button></button> <button></button>
-                <output name="info">Nomer Odin at 2018-01-08T20:00:00</output>
-                <img src=".UI/pic8.jpg" style="width: 50vw">
-                <output name="description">Field recordings are the best v.2</output>
-                <output name="hashTags">#fr #music</output>
-                <output name="likes">Dmitry Popugaev like this</output>
-                <button></button>
-             </pre>
+                <output class="info">Nomer Odin at 2018-01-08T20:00:00</output>
+                <img class="photo" src =".UI/pic8.jpg">
+                <output class="description">Field recordings are the best v.2</output>
+                <output class="hashTags">#fr #music</output>
+                <output class="likes">Dmitry Popugaev like this</output>
+            <output class = "buttons">
+                <button class ="like"></button>
+                <button class ="edit"></button>
+                <button class ="delete"></button>
+            </output>
         </div>
         <div class="photopost">
-            <pre>
-                <button></button> <button></button>
-                <output name="info">Jack Oblivian at 2018-01-09T20:00:00</output>
-                <img src=".UI/pic9.jpg" style="width: 50vw">
-                <output name="description">New album coming soon!</output>
-                <output name="hashTags">#JackOblivian #country</output>
-                <output name="likes">Castanea Crenata, Erein Pak, Katarina Ventrella like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Jack Oblivian at 2018-01-09T20:00:00</output>
+                <img class="photo" src =".UI/pic9.jpg">
+                <output class="description">New album coming soon!</output>
+                <output class="hashTags">#JackOblivian #country</output>
+                <output class="likes">Castanea Crenata, Erein Pak, Katarina Ventrella like this</output>
+            <output class = "buttons">
+                <button class ="like"></button>
+                <button class ="edit"></button>
+                <button class ="delete"></button>
+            </output>
         </div>
         <div class="photopost">
-           <pre>
-                <button></button> <button></button>
-                <output name="info">Michiro Endo at 2018-01-10T20:00:00</output>
-                <img src=".UI/pic10.BMP" style="width: 50vw">
-                <output name="description">wowowoowowow</output>
-                <output name="hashTags">#wow</output>
-                <output name="likes">Nomer Odin, Jack Oblivian like this</output>
-                <button></button>
-            </pre>
+                <output class="info">Michiro Endo at 2018-01-10T20:00:00</output>
+                <img class="photo" src =".UI/pic10.BMP">
+                <output class="description">wowowoowowow</output>
+                <output class="hashTags">#wow</output>
+                <output class="likes">Nomer Odin, Jack Oblivian like this</output>
+            <output class = "buttons">
+                <button class ="like"></button>
+                <button class ="edit"></button>
+                <button class ="delete"></button>
+            </output>
         </div>
-        <button style = "align-self: center">load more</button>
     </div>
-    <div class="clear"></div>
+    <a href = "#" class="loadmore">Load more</a>
     <div class="footer">imprint it - Книтор Полина - 2 курс 8 группа - atlantis.appolinaria@gmail.com</div>
-    </div>
 </body>
 </html>
