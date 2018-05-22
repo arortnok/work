@@ -108,7 +108,7 @@ var func = (function() {
                     return null;
                 });*/
                 for (var i = 0; i < photoPosts.length; i++) {
-                    if (photoPosts[i].id == id) {
+                    if (photoPosts[i].id === id) {
                         return photoPosts[i];
                     }
                 }
@@ -117,11 +117,11 @@ var func = (function() {
 
             validatePhotoPost: function (photoPost) {
                 if (
-                    photoPost.id != null &&
-                    photoPost.descriprion != null &&
-                    photoPost.createdAt != null &&
-                    photoPost.author != null &&
-                    photoPost.photoLink != null)
+                    photoPost.id !== null &&
+                    photoPost.descriprion !== null &&
+                    photoPost.createdAt !== null &&
+                    photoPost.author !== null &&
+                    photoPost.photoLink !== null)
                     return true;
                 return false;
             },
@@ -135,10 +135,10 @@ var func = (function() {
                 if (validatePhotoPost(photoPost)) {
                     newPhotoPost.descriprion = photoPost.descriprion;
                     newPhotoPost.photoLink = photoPost.photoLink;
-                    if (photoPost.likes != null) {
+                    if (photoPost.likes !== null) {
                         newPhotoPost.likes = photoPost.likes;
                     }
-                    if (photoPost.hashTags != null) {
+                    if (photoPost.hashTags !== null) {
                         newPhotoPost.hashTags = photoPost.hashTags;
                     }
                     return newPhotoPost;
@@ -148,14 +148,14 @@ var func = (function() {
 
             removePhotoPost: function (id) {
                 var photoPost = getPhotoPost(id);
-                if (photoPost == null)
+                if (photoPost === null)
                     return false;
                 photoPosts.splice(photoPosts.indexOf(photoPost), 1);
                 return true;
             },
 
             getPhotoPosts: function (skip = 0, top = 10, filterConfig) {
-                if (filterConfig === undefined || arguments.length < 3 || filterConfig === {}) {
+                if (!filterConfig || filterConfig === undefined || arguments.length < 3 || filterConfig === {}) {
                     return photoPosts.slice(skip, skip + top);
                 }
                 else {
