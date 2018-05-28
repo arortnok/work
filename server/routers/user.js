@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const posts = require('..server/db_services/photopost_services');
+const posts = require('../db_services/photopost_services');
 
 router.get('/getPhotoPosts', (req, res) =>{
     posts.addPhotoPost(req.body.post);
